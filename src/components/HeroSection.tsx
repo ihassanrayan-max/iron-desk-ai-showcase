@@ -18,8 +18,8 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-none text-balance">
-              <span className="block">Automation</span>
-              <span className="block premium-gradient text-glow">that ships</span>
+              <span className="block transform transition-all duration-700 hover:scale-105" style={{ transformStyle: 'preserve-3d' }}>Automation</span>
+              <span className="block premium-gradient text-glow transform transition-all duration-700 hover:scale-105 hover:rotateX(5deg)" style={{ transformStyle: 'preserve-3d' }}>that ships</span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground max-ch-68 leading-relaxed">

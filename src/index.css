@@ -26,8 +26,14 @@ All colors MUST be HSL.
     --muted: 220 26% 12%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 195 100% 60%;
+    --accent: 195 100% 75%;
     --accent-foreground: 220 26% 6%;
+    
+    /* Tech Blue Palette from Logo */
+    --tech-primary: 195 100% 60%;
+    --tech-bright: 195 100% 75%;
+    --tech-deep: 200 100% 45%;
+    --tech-glow: 195 100% 85%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -188,10 +194,11 @@ All colors MUST be HSL.
   }
 
   .premium-gradient {
-    background: var(--premium-gradient);
+    background: linear-gradient(135deg, hsl(var(--tech-primary)) 0%, hsl(var(--tech-bright)) 50%, hsl(var(--tech-glow)) 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px hsl(var(--tech-primary) / 0.3));
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -287,6 +294,22 @@ All colors MUST be HSL.
     transition: var(--transition-bounce);
     position: relative;
     overflow: hidden;
+    background: linear-gradient(135deg, hsl(var(--tech-primary)) 0%, hsl(var(--tech-deep)) 100%);
+    border: 1px solid hsl(var(--tech-primary) / 0.4);
+    transform-style: preserve-3d;
+    box-shadow: 
+      0 4px 15px hsl(var(--tech-primary) / 0.2),
+      0 2px 8px hsl(var(--tech-primary) / 0.1),
+      inset 0 1px 0 hsl(var(--tech-bright) / 0.2);
+  }
+
+  .magnetic-button:hover {
+    transform: translateY(-2px) scale(1.02) rotateX(5deg);
+    box-shadow: 
+      0 12px 40px hsl(var(--tech-primary) / 0.4),
+      0 6px 20px hsl(var(--tech-primary) / 0.2),
+      inset 0 1px 0 hsl(var(--tech-bright) / 0.3);
+    background: linear-gradient(135deg, hsl(var(--tech-bright)) 0%, hsl(var(--tech-primary)) 100%);
   }
 
   .magnetic-button::before {
@@ -319,24 +342,35 @@ All colors MUST be HSL.
     will-change: transform;
   }
 
-  /* Premium card effects */
+  /* Premium card effects with 3D depth */
   .premium-card {
     background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    border: 1px solid hsl(var(--tech-primary) / 0.2);
     backdrop-filter: blur(20px);
     transition: var(--transition-smooth);
+    transform-style: preserve-3d;
+    box-shadow: 
+      0 8px 32px hsl(var(--tech-primary) / 0.1),
+      0 4px 16px hsl(var(--tech-primary) / 0.05),
+      inset 0 1px 0 hsl(var(--tech-bright) / 0.1);
   }
 
   .premium-card:hover {
     background: hsl(var(--card) / 0.8);
-    border-color: hsl(var(--accent) / 0.3);
-    box-shadow: var(--shadow-premium);
-    transform: translateY(-4px);
+    border-color: hsl(var(--tech-primary) / 0.4);
+    transform: translateY(-6px) rotateX(2deg) rotateY(1deg);
+    box-shadow: 
+      0 12px 50px hsl(var(--tech-primary) / 0.2),
+      0 8px 25px hsl(var(--tech-primary) / 0.1),
+      inset 0 1px 0 hsl(var(--tech-bright) / 0.15);
   }
 
-  /* Text effects */
+  /* Text effects with tech blue glow */
   .text-glow {
-    text-shadow: 0 0 20px hsl(var(--accent) / 0.5);
+    text-shadow: 
+      0 0 20px hsl(var(--tech-primary) / 0.6),
+      0 0 40px hsl(var(--tech-bright) / 0.4),
+      0 0 80px hsl(var(--tech-glow) / 0.2);
   }
 
   .text-balance {
