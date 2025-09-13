@@ -27,19 +27,19 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-16 section-divider">
+      <div className="page-width mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+          <div className="mb-12">
+            <h2 className="font-bold mb-4">
               Book a quick walkthrough
             </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed content-width mx-auto">
               Tell us your niche and stack. We'll map the first workflow to ship.
             </p>
           </div>
 
-          <Card className="p-8 border border-border rounded-2xl bg-card">
+          <Card className="p-6 md:p-8 border border-border rounded-2xl bg-card">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>

@@ -8,18 +8,18 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center pt-16">
+    <section id="hero" className="relative min-h-[85vh] md:min-h-screen flex items-center pt-16">
       <div className="hero-bg absolute inset-0 pointer-events-none" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative page-width mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left content */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-none">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-none">
                 Automate the boring.{" "}
                 <span className="block">Grow the business.</span>
               </h1>
-              <p className="text-xl sm:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
+              <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed content-width">
                 IronDeskAI builds lightweight AI workflows for service businesses. 
                 This is the front-end—book a walkthrough; features roll out next.
               </p>

@@ -36,24 +36,24 @@ const AgentsSection = () => {
   ];
 
   return (
-    <section id="agents" className="py-24 border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+    <section id="agents" className="py-16 section-divider">
+      <div className="page-width mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="font-bold mb-4">
             Agents & Automations
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-muted-foreground content-width mx-auto leading-relaxed">
             Preview what's coming. Today: demo the flows; full features ship next.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid sm:grid-cols-2 gap-6">
           {agents.map((agent) => {
             const IconComponent = agent.icon;
             return (
               <Card
                 key={agent.title}
-                className="p-8 border border-border rounded-2xl bg-card hover:shadow-md transition-all duration-200 group"
+                className="p-6 border border-border rounded-2xl bg-card hover:shadow-md hover:-translate-y-1 transition-all duration-200 group"
               >
                 <div className="flex items-start justify-between mb-6">
                   <div className="w-14 h-14 bg-secondary rounded-xl flex items-center justify-center">
@@ -80,6 +80,16 @@ const AgentsSection = () => {
               </Card>
             );
           })}
+        </div>
+        
+        <div className="text-center mt-12">
+          <Button
+            variant="outline"
+            onClick={() => scrollToSection("platform")}
+            className="text-accent border-accent hover:bg-accent hover:text-white"
+          >
+            Explore the Platform
+          </Button>
         </div>
       </div>
     </section>

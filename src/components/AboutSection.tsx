@@ -21,17 +21,17 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-24 border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-16 section-divider">
+      <div className="page-width mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-8">
+          <div className="text-center mb-12">
+            <h2 className="font-bold mb-4">
               About IronDeskAI
             </h2>
           </div>
 
-          <div className="prose prose-lg max-w-none mb-16">
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+          <div className="content-width mx-auto mb-12">
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 We're building IronDeskAI to solve a simple problem: service businesses 
                 need automation, but most tools are either too complex or too generic. 
@@ -50,13 +50,13 @@ const AboutSection = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {trustPoints.map((point) => {
               const IconComponent = point.icon;
               return (
                 <Card
                   key={point.title}
-                  className="p-6 border border-border rounded-2xl bg-card text-center"
+                  className="p-5 border border-border rounded-2xl bg-card text-center hover:shadow-md hover:-translate-y-1 transition-all duration-200"
                 >
                   <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center mx-auto mb-4">
                     <IconComponent className="w-6 h-6 text-foreground" />
