@@ -18,18 +18,14 @@ const Index = () => {
         <HeroSection />
         <PlatformSection />
         <AgentsSection />
-        <InlineContactBanner 
-          title="See it in action"
-          description="Ready to preview your first automation? Book a walkthrough."
-        />
         <ResourcesSection />
-        <InlineContactBanner 
-          title="Want to dive deeper?"
-          description="Book a walkthrough and we'll map your first workflow live."
-        />
         <ComparisonSection />
         <FAQSection />
         <AboutSection />
+        <InlineContactBanner 
+          title="Ready to automate your workflows?"
+          description="Book a walkthrough and see how IronDeskAI can streamline your operations."
+        />
         <ContactSection />
       </main>
       <Footer />
