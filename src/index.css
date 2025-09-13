@@ -41,15 +41,20 @@ All colors MUST be HSL.
     --neutral-200: 0 0% 90%;
     --neutral-700: 0 0% 26%;
     
-    /* Hero radial gradient */
+    /* Background visual system */
     --hero-radial: radial-gradient(ellipse at center, hsl(224 71% 63% / 0.1) 0%, transparent 50%);
+    --cursor-gradient: radial-gradient(circle at var(--cursor-x, 50%) var(--cursor-y, 50%), hsl(224 71% 63% / 0.03) 0%, transparent 150px);
+    --section-gradient: linear-gradient(135deg, hsl(224 71% 63% / 0.02) 0%, transparent 100%);
     
     /* Shadows */
     --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
     --shadow-card-hover: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
+    --shadow-elegant: 0 4px 20px -4px hsl(224 71% 63% / 0.15);
+    --shadow-glow: 0 0 40px hsl(224 71% 63% / 0.1);
     
     /* Transitions */
-    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
 
@@ -118,7 +123,55 @@ All colors MUST be HSL.
     @apply bg-background text-foreground font-sans;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 17px;
-    line-height: 1.6;
+    line-height: 1.65;
+    cursor: none;
+    overflow-x: hidden;
+  }
+
+  /* Cursor system */
+  .cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: hsl(224 71% 63% / 0.3);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+    mix-blend-mode: difference;
+  }
+
+  .cursor-trail {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: hsl(224 71% 63% / 0.2);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.15s ease;
+  }
+
+  /* Background visual system */
+  .page-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background: var(--cursor-gradient);
+    opacity: 0.7;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cursor, .cursor-trail {
+      display: none;
+    }
+    body {
+      cursor: auto;
+    }
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -132,12 +185,12 @@ All colors MUST be HSL.
   }
   
   h2 {
-    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-size: clamp(1.75rem, 3.5vw, 2rem);
     line-height: 1.1;
   }
   
   h3 {
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
     line-height: 1.2;
   }
   
@@ -146,7 +199,7 @@ All colors MUST be HSL.
   }
   
   .content-width {
-    max-width: 45rem; /* ~720px for text content */
+    max-width: 47.5rem; /* ~760px for text content */
   }
   
   .page-width {
@@ -155,5 +208,111 @@ All colors MUST be HSL.
   
   .section-divider {
     border-top: 1px solid hsl(var(--border));
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.2s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out;
+  }
+
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .magnetic-button {
+    transition: var(--transition-fast);
+    cursor: none;
+  }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .parallax-element {
+    will-change: transform;
+  }
+
+  /* Section accents */
+  .section-accent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 200px;
+    opacity: 0.1;
+    pointer-events: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* Text sizing improvements */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .max-ch-68 {
+    max-width: 68ch;
+  }
+
+  .max-ch-76 {
+    max-width: 76ch;
+  }
+
+  /* Magnetic button effect */
+  .magnetic-button {
+    position: relative;
+    transition: var(--transition-fast);
+  }
+
+  /* Sticky elements */
+  .sticky-walkthrough {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 50;
+    transition: var(--transition-smooth);
+  }
+
+  .sticky-walkthrough:hover {
+    transform: scale(1.05);
+  }
+
+  /* Scroll progress bar */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: hsl(var(--border));
+    z-index: 100;
+  }
+
+  .scroll-progress-bar {
+    height: 100%;
+    background: hsl(var(--accent));
+    width: 0%;
+    transition: width 0.1s ease;
   }
 }
