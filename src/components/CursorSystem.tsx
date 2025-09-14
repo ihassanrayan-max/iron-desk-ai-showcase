@@ -1,7 +1,6 @@
 import { useCursor } from '@/hooks/useCursor';
 import { useScrollProgress } from '@/hooks/useScrollReveal';
 import SymbolIcon from './SymbolIcon';
-import cursorSymbol from '@/assets/brand-cursor-symbol.png';
 
 const CursorSystem = () => {
   const { cursorRef, cursorTrailRef, cursorGlowRef } = useCursor();
@@ -11,9 +10,7 @@ const CursorSystem = () => {
     <>
       <div ref={cursorRef} className="cursor" />
       <div ref={cursorTrailRef} className="cursor-trail" />
-      <div ref={cursorGlowRef} className="cursor-glow flex items-center justify-center">
-        <img src={cursorSymbol} alt="Brand symbol" width={64} height={64} draggable={false} style={{ filter: 'brightness(1.8)' }} />
-      </div>
+      <div ref={cursorGlowRef} className="cursor-glow" />
       <div className="page-background" />
       <div className="scroll-progress">
         <div className="scroll-progress-bar" />
@@ -25,10 +22,12 @@ const CursorSystem = () => {
         height: '300px',
         top: '10%',
         right: '5%',
-        animationDelay: '0s'
+        animationDelay: '0s',
+        position: 'relative',
+        pointerEvents: 'none'
       }}>
-        <div className="absolute inset-0 flex items-center justify-center opacity-20">
-          <SymbolIcon size={80} className="text-primary" />
+        <div className="absolute inset-0 flex items-center justify-center opacity-25" aria-hidden="true">
+          <SymbolIcon size={100} className="text-primary" />
         </div>
       </div>
       <div className="floating-orb" style={{
