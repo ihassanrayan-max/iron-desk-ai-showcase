@@ -37,13 +37,13 @@ const PlatformSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="platform" className="section-spacing section-divider relative overflow-hidden">
+    <section ref={sectionRef} id="platform" className="section-medium section-divider relative overflow-hidden">
       <div 
         className="section-accent opacity-5"
         style={{ backgroundImage: `url(${accentPlatformImg})` }}
       />
       
-      <div className="container-system">
+      <div className="page-width mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-8">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">

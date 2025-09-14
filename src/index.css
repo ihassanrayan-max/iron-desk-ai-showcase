@@ -8,27 +8,6 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Global container and spacing system */
-    --page-max: 1200px;
-    --gutter-sm: 16px;  /* ≤768px */
-    --gutter-md: 24px;  /* 769–1199px */
-    --gutter-lg: 32px;  /* ≥1200px */
-    --logo-mark-max: 30px;
-    
-    /* Header system */
-    --header-height-mobile: 56px;
-    --header-height-desktop: 64px;
-    
-    /* Typography system */
-    --font-h1: clamp(40px, 6vw, 64px);
-    --font-h2: clamp(28px, 3.6vw, 40px);
-    --font-body: clamp(15px, 1.3vw, 18px);
-    
-    /* Section spacing */
-    --section-mobile: 40px;
-    --section-tablet: 56px;
-    --section-desktop: 72px;
-
     --background: 220 26% 6%;
     --foreground: 210 40% 98%;
 
@@ -150,27 +129,9 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground font-sans;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: var(--font-body);
+    font-size: 17px;
     line-height: 1.65;
     overflow-x: hidden;
-  }
-  
-  /* Global container system */
-  .container-system {
-    width: min(var(--page-max), calc(100% - 2 * var(--gutter-lg)));
-    margin: 0 auto;
-  }
-  
-  @media (max-width: 1199px) {
-    .container-system {
-      width: min(var(--page-max), calc(100% - 2 * var(--gutter-md)));
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .container-system {
-      width: min(var(--page-max), calc(100% - 2 * var(--gutter-sm)));
-    }
   }
 
   /* Enhanced cursor system */
@@ -259,16 +220,12 @@ All colors MUST be HSL.
 
   /* Header and Layout Fixes */
   .logo-container {
-    height: clamp(22px, 2.4vw, var(--logo-mark-max));
+    height: clamp(20px, 5vw, 24px);
   }
-  
-  .header-height {
-    height: var(--header-height-mobile);
-  }
-  
-  @media (min-width: 769px) {
-    .header-height {
-      height: var(--header-height-desktop);
+
+  @media (min-width: 768px) {
+    .logo-container {
+      height: clamp(22px, 2.8vw, 28px) !important;
     }
   }
 
@@ -286,12 +243,11 @@ All colors MUST be HSL.
   }
   
   h1 {
-    font-size: var(--font-h1);
     line-height: 0.95;
   }
   
   h2 {
-    font-size: var(--font-h2);
+    font-size: clamp(1.75rem, 3.5vw, 2rem);
     line-height: 1.1;
   }
   
@@ -316,39 +272,17 @@ All colors MUST be HSL.
     border-top: 1px solid hsl(var(--border));
   }
 
-  /* Consistent section spacing */
-  .section-spacing {
-    padding: var(--section-mobile) 0;
+  /* Dramatically reduced section padding */
+  .section-tight {
+    padding: 2rem 0;
   }
-  
-  @media (min-width: 769px) {
-    .section-spacing {
-      padding: var(--section-tablet) 0;
-    }
+
+  .section-medium {
+    padding: 3rem 0;
   }
-  
-  @media (min-width: 1200px) {
-    .section-spacing {
-      padding: var(--section-desktop) 0;
-    }
-  }
-  
-  .hero-spacing {
-    padding-top: calc(var(--header-height-mobile) + 16px);
-    padding-bottom: var(--section-mobile);
-  }
-  
-  @media (min-width: 769px) {
-    .hero-spacing {
-      padding-top: calc(var(--header-height-desktop) + 16px);
-      padding-bottom: var(--section-tablet);
-    }
-  }
-  
-  @media (min-width: 1200px) {
-    .hero-spacing {
-      padding-bottom: var(--section-desktop);
-    }
+
+  .hero-tight {
+    padding: 4rem 0 2rem;
   }
 
   /* Enhanced animation utilities */

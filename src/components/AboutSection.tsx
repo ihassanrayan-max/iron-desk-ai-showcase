@@ -21,8 +21,8 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="section-spacing section-divider">
-      <div className="container-system">
+    <section id="about" className="py-16 section-divider">
+      <div className="page-width mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-bold mb-4">
