@@ -28,37 +28,22 @@ const AnimatedLogo = ({ onClick, className = "" }: AnimatedLogoProps) => {
     <div 
       onClick={onClick}
       className={`cursor-pointer group relative ${className}`}
-      style={{
-        height: 'clamp(20px, 5vw, 24px)', // Mobile first
-      }}
     >
-      <style>
-        {`
-          @media (min-width: 768px) {
-            .logo-container {
-              height: clamp(22px, 2.8vw, 28px) !important;
-            }
-          }
-        `}
-      </style>
       {/* Container with hover effects */}
-      <div className="logo-container relative flex flex-col items-center justify-center h-full transition-all duration-300 hover:rotate-1" style={{ height: 'inherit' }}>
+      <div className="relative transform transition-all duration-300 hover:scale-105">
         {/* Circuit Symbol with Bounce Animation */}
         <div 
-          className={`relative transition-all duration-500 ease-out ${
+          className={`relative mb-1 transition-all duration-500 ease-out ${
             animationPhase === 1
               ? 'animate-[bounce_0.8s_ease-out] opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-[-6px]'
+              : 'opacity-0 translate-y-[-15px]'
           }`}
           style={{ 
-            filter: 'drop-shadow(0 0 6px hsl(var(--tech-primary) / 0.6))',
-            height: '60%',
-            minHeight: '18px',
-            maxHeight: '24px'
+            filter: 'drop-shadow(0 0 8px hsl(var(--tech-primary) / 0.4))'
           }}
         >
-          {/* Tech Circuit Symbol */}
-          <div className="w-full h-full mx-auto relative" style={{ aspectRatio: '1' }}>
+          {/* Tech Circuit Symbol - Made smaller */}
+          <div className="w-8 h-8 mx-auto relative">
             <svg
               viewBox="0 0 100 100"
               className="w-full h-full"
@@ -119,7 +104,7 @@ const AnimatedLogo = ({ onClick, className = "" }: AnimatedLogoProps) => {
 
         {/* IRONDESKAI Text with Fade Animation */}
         <div 
-          className={`text-center transition-all duration-700 ease-out ${
+          className={`text-center mb-0.5 transition-all duration-700 ease-out ${
             animationPhase === 1
               ? 'opacity-100' 
               : 'opacity-0'
@@ -127,12 +112,10 @@ const AnimatedLogo = ({ onClick, className = "" }: AnimatedLogoProps) => {
           style={{ 
             transitionDelay: animationPhase === 1 ? '300ms' : '0ms',
             fontFamily: 'var(--font-tech, monospace)',
-            textShadow: '0 0 3px hsl(var(--tech-primary) / 0.4)',
-            fontSize: 'clamp(9px, 1.4vw, 11px)',
-            lineHeight: '1'
+            textShadow: '0 0 6px hsl(var(--tech-primary) / 0.4)'
           }}
         >
-          <h1 className="font-bold tracking-wider text-tech-bright">
+          <h1 className="text-sm font-bold tracking-wider text-tech-bright">
             IRONDESKAI
           </h1>
         </div>
@@ -142,16 +125,14 @@ const AnimatedLogo = ({ onClick, className = "" }: AnimatedLogoProps) => {
           className={`text-center transition-all duration-700 ease-out ${
             animationPhase === 1
               ? 'opacity-100 translate-x-0' 
-              : 'opacity-0 translate-x-[-12px]'
+              : 'opacity-0 translate-x-[-20px]'
           }`}
           style={{ 
             transitionDelay: animationPhase === 1 ? '600ms' : '0ms',
-            textShadow: '0 0 2px hsl(var(--tech-primary) / 0.3)',
-            fontSize: 'clamp(6px, 0.9vw, 8px)',
-            lineHeight: '1'
+            textShadow: '0 0 4px hsl(var(--tech-primary) / 0.3)'
           }}
         >
-          <p className="tracking-widest text-tech-primary/70 uppercase">
+          <p className="text-[10px] tracking-widest text-tech-primary/70 uppercase">
             Grow While You Sleep
           </p>
         </div>

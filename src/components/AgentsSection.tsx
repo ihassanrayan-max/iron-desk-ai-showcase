@@ -3,7 +3,6 @@ import { Button } from "./ui/button";
 import { Mail, Phone, FileText, Globe, ArrowRight } from "lucide-react";
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import accentAgentsImg from '@/assets/accent_agents.png';
-import symbolSvg from '@/assets/symbol.svg';
 
 const AgentsSection = () => {
   const sectionRef = useScrollReveal();
@@ -46,16 +45,6 @@ const AgentsSection = () => {
         className="section-accent opacity-5"
         style={{ backgroundImage: `url(${accentAgentsImg})` }}
       />
-      
-      {/* Section accent symbol */}
-      <div className="absolute top-8 right-8 pointer-events-none opacity-3">
-        <img 
-          src={symbolSvg} 
-          alt="" 
-          aria-hidden="true"
-          className="w-12 h-12 text-tech-primary/30"
-        />
-      </div>
       
       <div className="page-width mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
@@ -108,12 +97,6 @@ const AgentsSection = () => {
             onClick={() => scrollToSection("resources")}
             className="magnetic-button premium-card"
           >
-            <img 
-              src={symbolSvg} 
-              alt="" 
-              aria-hidden="true"
-              className="w-4 h-4 mr-2 text-current flex-shrink-0"
-            />
             Explore the Platform
           </Button>
         </div>
