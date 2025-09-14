@@ -208,6 +208,32 @@ All colors MUST be HSL.
     body {
       cursor: auto;
     }
+    /* Reduce animations globally */
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Header and Layout Fixes */
+  .logo-container {
+    height: clamp(20px, 5vw, 24px);
+  }
+
+  @media (min-width: 768px) {
+    .logo-container {
+      height: clamp(22px, 2.8vw, 28px) !important;
+    }
+  }
+
+  /* Ensure cursor glow stays under header */
+  .cursor,
+  .cursor-trail,
+  .cursor-glow {
+    z-index: 40; /* Lower than header z-index */
   }
   
   h1, h2, h3, h4, h5, h6 {
