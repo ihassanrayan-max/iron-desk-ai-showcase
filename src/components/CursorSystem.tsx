@@ -1,5 +1,6 @@
 import { useCursor } from '@/hooks/useCursor';
 import { useScrollProgress } from '@/hooks/useScrollReveal';
+import SymbolIcon from './SymbolIcon';
 
 const CursorSystem = () => {
   const { cursorRef, cursorTrailRef, cursorGlowRef } = useCursor();
@@ -22,7 +23,11 @@ const CursorSystem = () => {
         top: '10%',
         right: '5%',
         animationDelay: '0s'
-      }} />
+      }}>
+        <div className="absolute inset-0 flex items-center justify-center opacity-20">
+          <SymbolIcon size={80} className="text-primary" />
+        </div>
+      </div>
       <div className="floating-orb" style={{
         width: '200px', 
         height: '200px',

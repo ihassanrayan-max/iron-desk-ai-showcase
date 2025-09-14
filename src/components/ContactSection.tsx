@@ -116,10 +116,12 @@ const ContactSection = () => {
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   Join our early adopters and get priority access to new features.
                 </p>
-                <Button variant="hero" size="lg" className="text-base px-8 py-6 h-auto flex items-center gap-3">
-                  <SymbolIcon size={20} className="text-current" />
-                  Get Started Today
-                </Button>
+                <div className="flex justify-center">
+                  <Button variant="hero" size="lg" className="text-base px-8 py-6 h-auto flex items-center gap-3">
+                    <SymbolIcon size={20} className="text-current" />
+                    Get Started Today
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
