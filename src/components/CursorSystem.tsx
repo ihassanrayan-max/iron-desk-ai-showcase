@@ -22,10 +22,12 @@ const CursorSystem = () => {
         height: '300px',
         top: '10%',
         right: '5%',
-        animationDelay: '0s'
+        animationDelay: '0s',
+        position: 'relative',
+        pointerEvents: 'none'
       }}>
-        <div className="absolute inset-0 flex items-center justify-center opacity-20">
-          <SymbolIcon size={80} className="text-primary" />
+        <div className="absolute inset-0 flex items-center justify-center opacity-25" aria-hidden="true">
+          <SymbolIcon size={100} className="text-primary" />
         </div>
       </div>
       <div className="floating-orb" style={{

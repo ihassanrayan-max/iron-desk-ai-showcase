@@ -53,14 +53,20 @@ export const useCursor = () => {
     };
 
     const handleMouseEnter = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target.tagName === 'BUTTON' || target.tagName === 'A' || target.closest('button') || target.closest('a')) {
+      const target = e.target;
+      if (!(target instanceof Element)) return;
+      const interactive =
+        target.tagName === 'BUTTON' ||
+        target.tagName === 'A' ||
+        target.closest('button') ||
+        target.closest('a') ||
+        target.getAttribute('role') === 'button';
+      if (interactive) {
         cursor.style.transform += ' scale(1.8)';
         cursor.style.opacity = '1';
         cursorGlow.style.opacity = '0.3';
       }
     };
-
     const handleMouseLeave = () => {
       cursor.style.transform = cursor.style.transform.replace(' scale(1.8)', '');
       cursor.style.opacity = '0.8';
