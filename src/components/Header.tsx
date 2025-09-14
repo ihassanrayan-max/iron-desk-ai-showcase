@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
-import AnimatedLogo from "./AnimatedLogo";
+import HeaderLogo from "./HeaderLogo";
+import SymbolIcon from "./SymbolIcon";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,10 +30,10 @@ const Header = () => {
     >
       <div className="page-width mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Animated Logo */}
-          <AnimatedLogo 
+          {/* Header Logo */}
+          <HeaderLogo 
             onClick={() => scrollToSection("hero")}
-            className="transform transition-all duration-300 hover:rotate-1"
+            className="transform transition-all duration-300"
           />
 
           {/* Navigation */}
@@ -59,8 +60,9 @@ const Header = () => {
           <div className="hidden lg:block">
             <Button 
               onClick={() => scrollToSection("contact")}
-              className="magnetic-button text-sm px-6 py-2"
+              className="magnetic-button text-sm px-6 py-2 flex items-center gap-2"
             >
+              <SymbolIcon size={16} className="text-current" />
               Get a Walkthrough
             </Button>
           </div>

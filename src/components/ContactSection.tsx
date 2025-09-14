@@ -3,6 +3,8 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Card } from "./ui/card";
+import AnimatedLogo from "./AnimatedLogo";
+import SymbolIcon from "./SymbolIcon";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -101,17 +103,25 @@ const ContactSection = () => {
             </form>
           </Card>
 
-          {/* Additional CTA */}
+          {/* Additional CTA with Animated Logo */}
           <div className="mt-16 p-8 bg-secondary rounded-2xl">
-            <h3 className="text-2xl font-semibold mb-4">
-              Ready to automate your business?
-            </h3>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              Join our early adopters and get priority access to new features.
-            </p>
-            <Button variant="hero" size="lg" className="text-base px-8 py-6 h-auto">
-              Get Started Today
-            </Button>
+            <div className="flex flex-col items-center space-y-6">
+              {/* Animated Logo */}
+              <AnimatedLogo className="transform scale-125" />
+              
+              <div className="text-center">
+                <h3 className="text-2xl font-semibold mb-4">
+                  Ready to automate your business?
+                </h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  Join our early adopters and get priority access to new features.
+                </p>
+                <Button variant="hero" size="lg" className="text-base px-8 py-6 h-auto flex items-center gap-3">
+                  <SymbolIcon size={20} className="text-current" />
+                  Get Started Today
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

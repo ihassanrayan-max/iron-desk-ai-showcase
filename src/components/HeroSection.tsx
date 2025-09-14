@@ -1,6 +1,7 @@
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 import heroMockup from "@/assets/hero-mockup.jpg";
+import SymbolIcon from "./SymbolIcon";
 
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -31,8 +32,9 @@ const HeroSection = () => {
               <Button 
                 onClick={() => scrollToSection("contact")}
                 size="lg"
-                className="magnetic-button hover-glow group text-base px-8 py-4"
+                className="magnetic-button hover-glow group text-base px-8 py-4 flex items-center gap-3"
               >
+                <SymbolIcon size={20} className="text-current" />
                 Get a Walkthrough
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
