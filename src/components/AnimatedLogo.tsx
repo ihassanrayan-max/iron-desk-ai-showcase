@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import logoAnimated from "@/assets/logo-animated.png";
 
 interface AnimatedLogoProps {
   onClick?: () => void;
@@ -13,7 +12,7 @@ const AnimatedLogo = ({ onClick, className = "" }: AnimatedLogoProps) => {
     // Initial animation
     const initialTimer = setTimeout(() => setAnimationPhase(1), 100);
     
-    // Repeating animation cycle
+    // Repeating animation cycle every 5 seconds
     const interval = setInterval(() => {
       setAnimationPhase(0);
       setTimeout(() => setAnimationPhase(1), 100);
