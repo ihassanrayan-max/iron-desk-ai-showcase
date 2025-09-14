@@ -7,8 +7,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="py-12 section-divider">
-      <div className="page-width mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="section-spacing section-divider">
+      <div className="container-system">
         <div className="text-center space-y-4">
           <div className="flex items-center justify-center space-x-8 text-sm text-muted-foreground">
             <button className="hover:text-accent transition-colors">Privacy</button>

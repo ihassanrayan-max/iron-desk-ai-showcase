@@ -40,13 +40,13 @@ const AgentsSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="agents" className="section-medium section-divider relative overflow-hidden">
+    <section ref={sectionRef} id="agents" className="section-spacing section-divider relative overflow-hidden">
       <div 
         className="section-accent opacity-5"
         style={{ backgroundImage: `url(${accentAgentsImg})` }}
       />
       
-      <div className="page-width mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container-system">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Your <span className="premium-gradient">AI workforce</span>

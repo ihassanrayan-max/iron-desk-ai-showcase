@@ -30,10 +30,10 @@ const ResourcesSection = () => {
   ];
 
   return (
-    <section id="resources" className="py-16 section-divider">
-      <div className="page-width mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="font-bold mb-4">
+    <section id="resources" className="section-spacing section-divider">
+      <div className="container-system">
+          <div className="text-center mb-12">
+            <h2 className="font-bold mb-4">
             Resources
           </h2>
         </div>

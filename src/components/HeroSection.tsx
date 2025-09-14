@@ -9,20 +9,20 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className="relative overflow-hidden" style={{ paddingTop: 'calc(3.5rem + 1rem)' }}>
+    <section id="hero" className="relative overflow-hidden hero-spacing">
       {/* Premium background effects */}
-      <div className="absolute inset-0 hero-bg" style={{ marginTop: '32px' }} />
-      <div className="absolute inset-0 grid-overlay opacity-30" style={{ marginTop: '32px' }} />
+      <div className="absolute inset-0 hero-bg" />
+      <div className="absolute inset-0 grid-overlay opacity-30" />
       
-      <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[80vh] py-8">
+      <div className="container-system relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[75vh]">
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-none text-balance">
+            <h1 className="font-bold leading-none text-balance">
               <span className="block transform transition-all duration-700 hover:translate-y-[-6px]" style={{ transformStyle: 'preserve-3d' }}>Automation</span>
               <span className="block premium-gradient text-glow transform transition-all duration-700 hover:translate-y-[-6px]" style={{ transformStyle: 'preserve-3d' }}>that ships</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground max-ch-68 leading-relaxed opacity-90 hover:opacity-100 transition-opacity duration-500">
+            <p className="text-muted-foreground max-ch-68 leading-relaxed opacity-90 hover:opacity-100 transition-opacity duration-500" style={{ fontSize: 'var(--font-body)' }}>
               IronDeskAI builds lightweight AI workflows for service businesses. 
               Automate the boring, grow the business.
             </p>
