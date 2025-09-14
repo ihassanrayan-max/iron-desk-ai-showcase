@@ -1,6 +1,7 @@
 import { useCursor } from '@/hooks/useCursor';
 import { useScrollProgress } from '@/hooks/useScrollReveal';
 import SymbolIcon from './SymbolIcon';
+import cursorSymbol from '@/assets/brand-cursor-symbol.png';
 
 const CursorSystem = () => {
   const { cursorRef, cursorTrailRef, cursorGlowRef } = useCursor();
@@ -11,7 +12,7 @@ const CursorSystem = () => {
       <div ref={cursorRef} className="cursor" />
       <div ref={cursorTrailRef} className="cursor-trail" />
       <div ref={cursorGlowRef} className="cursor-glow flex items-center justify-center">
-        <SymbolIcon size={56} className="text-tech-glow brightness-200 animate-pulse cursor-symbol-glow" />
+        <img src={cursorSymbol} alt="Brand symbol" width={64} height={64} draggable={false} style={{ filter: 'brightness(1.8)' }} />
       </div>
       <div className="page-background" />
       <div className="scroll-progress">

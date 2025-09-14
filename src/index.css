@@ -170,12 +170,6 @@ All colors MUST be HSL.
     transition: transform 0.3s ease;
   }
 
-  .cursor-symbol-glow {
-    filter: drop-shadow(0 0 20px hsl(var(--tech-glow))) 
-            drop-shadow(0 0 40px hsl(var(--tech-bright))) 
-            drop-shadow(0 0 80px hsl(var(--tech-primary)));
-    animation: symbol-pulse 2s ease-in-out infinite, symbol-shimmer 3s linear infinite;
-  }
 
   /* Enhanced background visual system */
   .page-background {
@@ -434,26 +428,7 @@ All colors MUST be HSL.
     pointer-events: none;
   }
 
-  @keyframes symbol-pulse {
-    0%, 100% { 
-      filter: drop-shadow(0 0 20px hsl(var(--tech-glow))) 
-              drop-shadow(0 0 40px hsl(var(--tech-bright))) 
-              drop-shadow(0 0 80px hsl(var(--tech-primary)));
-    }
-    50% { 
-      filter: drop-shadow(0 0 40px hsl(var(--tech-glow))) 
-              drop-shadow(0 0 80px hsl(var(--tech-bright))) 
-              drop-shadow(0 0 160px hsl(var(--tech-primary)));
-    }
-  }
 
-  @keyframes symbol-shimmer {
-    0% { filter: hue-rotate(0deg) brightness(150%); }
-    25% { filter: hue-rotate(90deg) brightness(200%); }
-    50% { filter: hue-rotate(180deg) brightness(250%); }
-    75% { filter: hue-rotate(270deg) brightness(200%); }
-    100% { filter: hue-rotate(360deg) brightness(150%); }
-  }
 
   @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
