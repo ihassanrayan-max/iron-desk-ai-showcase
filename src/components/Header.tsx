@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
+import AnimatedLogo from "./AnimatedLogo";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,25 +29,11 @@ const Header = () => {
     >
       <div className="page-width mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo with 3D effect */}
-          <div 
+          {/* Animated Logo */}
+          <AnimatedLogo 
             onClick={() => scrollToSection("hero")}
-            className="cursor-pointer group transform transition-all duration-300 hover:scale-105 hover:rotate-1"
-          >
-            <div className="flex items-center space-x-3">
-              <div className="relative">
-                <img 
-                  src="/src/assets/logo-irondeskai.png" 
-                  alt="IronDeskAI" 
-                  className="h-10 w-auto transition-all duration-300 drop-shadow-lg group-hover:drop-shadow-2xl"
-                  style={{
-                    filter: 'drop-shadow(0 0 10px hsl(var(--tech-primary) / 0.3))'
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-tech-primary/20 to-tech-bright/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-            </div>
-          </div>
+            className="transform transition-all duration-300 hover:rotate-1"
+          />
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
