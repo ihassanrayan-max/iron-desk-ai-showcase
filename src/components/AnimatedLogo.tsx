@@ -51,10 +51,10 @@ const AnimatedLogo = ({ onClick, className = "" }: AnimatedLogoProps) => {
               : 'opacity-0 translate-y-[-6px]'
           }`}
           style={{ 
-            filter: 'drop-shadow(0 0 4px hsl(var(--tech-primary) / 0.4))',
-            height: '40%',
-            minHeight: '12px',
-            maxHeight: '16px'
+            filter: 'drop-shadow(0 0 6px hsl(var(--tech-primary) / 0.6))',
+            height: '60%',
+            minHeight: '18px',
+            maxHeight: '24px'
           }}
         >
           {/* Tech Circuit Symbol */}
@@ -128,7 +128,7 @@ const AnimatedLogo = ({ onClick, className = "" }: AnimatedLogoProps) => {
             transitionDelay: animationPhase === 1 ? '300ms' : '0ms',
             fontFamily: 'var(--font-tech, monospace)',
             textShadow: '0 0 3px hsl(var(--tech-primary) / 0.4)',
-            fontSize: 'clamp(8px, 1.2vw, 10px)',
+            fontSize: 'clamp(9px, 1.4vw, 11px)',
             lineHeight: '1'
           }}
         >
@@ -147,7 +147,7 @@ const AnimatedLogo = ({ onClick, className = "" }: AnimatedLogoProps) => {
           style={{ 
             transitionDelay: animationPhase === 1 ? '600ms' : '0ms',
             textShadow: '0 0 2px hsl(var(--tech-primary) / 0.3)',
-            fontSize: 'clamp(6px, 0.8vw, 7px)',
+            fontSize: 'clamp(6px, 0.9vw, 8px)',
             lineHeight: '1'
           }}
         >

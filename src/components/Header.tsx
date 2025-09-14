@@ -28,15 +28,17 @@ const Header = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6 h-full">
-        <div className="flex items-center justify-between h-full">
-          {/* Animated Logo */}
-          <AnimatedLogo 
-            onClick={() => scrollToSection("hero")}
-            className="transform transition-all duration-300 hover:rotate-1"
-          />
+        <div className="flex items-center justify-between h-full w-full">
+          {/* Left Side - Animated Logo */}
+          <div className="flex items-center">
+            <AnimatedLogo 
+              onClick={() => scrollToSection("hero")}
+              className="transform transition-all duration-300 hover:rotate-1"
+            />
+          </div>
 
-          {/* Navigation */}
-          <nav className="hidden md:flex items-center space-x-8 h-full">
+          {/* Center - Navigation (Desktop only) */}
+          <nav className="hidden lg:flex items-center space-x-8 h-full absolute left-1/2 transform -translate-x-1/2">
             {[
               { label: "Agents", id: "agents" },
               { label: "Platform", id: "platform" },
@@ -55,25 +57,28 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:flex items-center h-full">
-            <Button 
-              onClick={() => scrollToSection("contact")}
-              className="magnetic-button text-sm px-6 py-2"
-            >
-              Get a Walkthrough
-            </Button>
-          </div>
+          {/* Right Side - CTA Button */}
+          <div className="flex items-center">
+            {/* Desktop CTA */}
+            <div className="hidden md:block">
+              <Button 
+                onClick={() => scrollToSection("contact")}
+                className="magnetic-button text-sm px-6 py-2"
+              >
+                Get a Walkthrough
+              </Button>
+            </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <Button 
-              onClick={() => scrollToSection("contact")}
-              variant="outline"
-              className="premium-card text-sm px-4 py-2"
-            >
-              Get Started
-            </Button>
+            {/* Mobile CTA */}
+            <div className="md:hidden">
+              <Button 
+                onClick={() => scrollToSection("contact")}
+                variant="outline"
+                className="premium-card text-sm px-4 py-2"
+              >
+                Get a Walkthrough
+              </Button>
+            </div>
           </div>
         </div>
       </div>
