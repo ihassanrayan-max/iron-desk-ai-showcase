@@ -4,6 +4,7 @@ import { ArrowRight, Rocket, BarChart3, DollarSign, Settings } from "lucide-reac
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import accentPlatformImg from '@/assets/accent_platform.png';
 import platformMockImg from '@/assets/platform_mock.png';
+import symbolSvg from '@/assets/symbol.svg';
 
 const PlatformSection = () => {
   const sectionRef = useScrollReveal();
@@ -42,6 +43,16 @@ const PlatformSection = () => {
         className="section-accent opacity-5"
         style={{ backgroundImage: `url(${accentPlatformImg})` }}
       />
+      
+      {/* Section accent symbol */}
+      <div className="absolute top-8 right-8 pointer-events-none opacity-3">
+        <img 
+          src={symbolSvg} 
+          alt="" 
+          aria-hidden="true"
+          className="w-12 h-12 text-tech-primary/30"
+        />
+      </div>
       
       <div className="page-width mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-8">
@@ -112,6 +123,12 @@ const PlatformSection = () => {
             onClick={() => scrollToSection("agents")}
             className="magnetic-button premium-card"
           >
+            <img 
+              src={symbolSvg} 
+              alt="" 
+              aria-hidden="true"
+              className="w-4 h-4 mr-2 text-current flex-shrink-0"
+            />
             Explore the Platform
           </Button>
         </div>

@@ -134,7 +134,7 @@ All colors MUST be HSL.
     overflow-x: hidden;
   }
 
-  /* Enhanced cursor system */
+  /* Enhanced cursor system with symbol glow mask */
   .cursor {
     position: fixed;
     width: 24px;
@@ -142,7 +142,7 @@ All colors MUST be HSL.
     background: linear-gradient(135deg, hsl(195 100% 60%), hsl(234 89% 74%));
     border-radius: 50%;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 40;
     transition: transform 0.1s ease, opacity 0.3s ease;
     mix-blend-mode: screen;
     opacity: 0.8;
@@ -155,7 +155,7 @@ All colors MUST be HSL.
     background: hsl(195 100% 60% / 0.4);
     border-radius: 50%;
     pointer-events: none;
-    z-index: 9998;
+    z-index: 39;
     transition: transform 0.2s ease;
   }
 
@@ -166,8 +166,32 @@ All colors MUST be HSL.
     background: radial-gradient(circle, hsl(195 100% 60% / 0.1) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
-    z-index: 9997;
+    z-index: 38;
     transition: transform 0.3s ease;
+  }
+
+  /* Cursor glow mask for CTAs and nav links */
+  .magnetic-button:hover,
+  nav button:hover {
+    position: relative;
+  }
+
+  .magnetic-button:hover::after,
+  nav button:hover::after {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background: url('/src/assets/symbol.svg') center/20px no-repeat;
+    opacity: 0.3;
+    filter: blur(2px) drop-shadow(0 0 10px hsl(var(--tech-primary) / 0.6));
+    animation: symbol-glow 150ms ease-in-out;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  @keyframes symbol-glow {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 0.3; transform: scale(1); }
   }
 
   /* Enhanced background visual system */
@@ -233,7 +257,7 @@ All colors MUST be HSL.
   .cursor,
   .cursor-trail,
   .cursor-glow {
-    z-index: 40; /* Lower than header z-index */
+    z-index: 40; /* Lower than header z-index: 50 */
   }
   
   h1, h2, h3, h4, h5, h6 {

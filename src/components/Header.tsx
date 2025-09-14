@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import AnimatedLogo from "./AnimatedLogo";
+import symbolSvg from "@/assets/symbol.svg";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -65,6 +66,12 @@ const Header = () => {
                 onClick={() => scrollToSection("contact")}
                 className="magnetic-button text-sm px-6 py-2"
               >
+                <img 
+                  src={symbolSvg} 
+                  alt="" 
+                  aria-hidden="true"
+                  className="w-4 h-4 mr-2 text-current flex-shrink-0"
+                />
                 Get a Walkthrough
               </Button>
             </div>
@@ -76,6 +83,12 @@ const Header = () => {
                 variant="outline"
                 className="premium-card text-sm px-4 py-2"
               >
+                <img 
+                  src={symbolSvg} 
+                  alt="" 
+                  aria-hidden="true"
+                  className="w-4 h-4 mr-2 text-current flex-shrink-0"
+                />
                 Get a Walkthrough
               </Button>
             </div>
