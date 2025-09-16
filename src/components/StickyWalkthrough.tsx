@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { Button } from './ui/button';
 import { Phone } from 'lucide-react';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 const StickyWalkthrough = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const { trackCTAClick } = useAnalytics();
 
   const scrollToContact = () => {
+    trackCTAClick('sticky_walkthrough', 'sticky_button');
     const element = document.getElementById('contact');
     element?.scrollIntoView({ behavior: 'smooth' });
   };

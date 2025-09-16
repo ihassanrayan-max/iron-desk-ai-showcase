@@ -12,30 +12,33 @@ import Footer from "@/components/Footer";
 import CursorSystem from "@/components/CursorSystem";
 import StickyWalkthrough from "@/components/StickyWalkthrough";
 import BackToTop from "@/components/BackToTop";
+import AnalyticsProvider from "@/components/AnalyticsProvider";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <CursorSystem />
-      <Header />
-      <main>
-        <HeroSection />
-        <PlatformSection />
-        <AgentsSection />
-        <ResourcesSection />
-        <ComparisonSection />
-        <FAQSection />
-        <AboutSection />
-        <InlineContactBanner 
-          title="Ready to automate your workflows?"
-          description="Book a walkthrough and see how IronDeskAI can streamline your operations."
-        />
-        <ContactSection />
-      </main>
-      <Footer />
-      <StickyWalkthrough />
-      <BackToTop />
-    </div>
+    <AnalyticsProvider>
+      <div className="min-h-screen bg-background">
+        <CursorSystem />
+        <Header />
+        <main>
+          <HeroSection />
+          <PlatformSection />
+          <AgentsSection />
+          <ResourcesSection />
+          <ComparisonSection />
+          <FAQSection />
+          <AboutSection />
+          <InlineContactBanner 
+            title="Ready to automate your workflows?"
+            description="Book a walkthrough and see how IronDeskAI can streamline your operations."
+          />
+          <ContactSection />
+        </main>
+        <Footer />
+        <StickyWalkthrough />
+        <BackToTop />
+      </div>
+    </AnalyticsProvider>
   );
 };
 

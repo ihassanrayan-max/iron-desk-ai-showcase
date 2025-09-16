@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Card } from "./ui/card";
 import AnimatedLogo from "./AnimatedLogo";
 import SymbolIcon from "./SymbolIcon";
+import { useFormSubmission } from "@/hooks/useFormSubmission";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -13,19 +15,42 @@ const ContactSection = () => {
     company: "",
     workflow: ""
   });
+  
+  const { submitLead, isSubmitting } = useFormSubmission();
+  const { trackFormStart, trackCTAClick } = useAnalytics();
+  const [hasStartedForm, setHasStartedForm] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Connect to Supabase or n8n when ready
-    console.log("Form submitted:", formData);
-    alert("Thanks for your interest! We'll be in touch soon.");
+    
+    const result = await submitLead({
+      name: formData.name,
+      email: formData.email,
+      company: formData.company,
+      first_workflow: formData.workflow,
+    }, 'walkthrough_form');
+
+    if (result.success) {
+      setFormData({ name: "", email: "", company: "", workflow: "" });
+      setHasStartedForm(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    // Track form start on first interaction
+    if (!hasStartedForm) {
+      trackFormStart('walkthrough_form');
+      setHasStartedForm(true);
+    }
+    
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
     }));
+  };
+
+  const handleCTAClick = (ctaName: string) => {
+    trackCTAClick(ctaName, 'contact_section');
   };
 
   return (
@@ -96,9 +121,10 @@ const ContactSection = () => {
                 type="submit"
                 variant="hero"
                 size="lg"
+                disabled={isSubmitting}
                 className="w-full md:w-auto text-base px-12 py-6 h-auto"
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </Card>
@@ -117,7 +143,12 @@ const ContactSection = () => {
                   Join our early adopters and get priority access to new features.
                 </p>
                 <div className="flex justify-center">
-                  <Button variant="hero" size="lg" className="text-base px-8 py-6 h-auto flex items-center gap-3">
+                  <Button 
+                    variant="hero" 
+                    size="lg" 
+                    className="text-base px-8 py-6 h-auto flex items-center gap-3"
+                    onClick={() => handleCTAClick('get_started_today')}
+                  >
                     <SymbolIcon size={20} className="text-current" />
                     Get Started Today
                   </Button>

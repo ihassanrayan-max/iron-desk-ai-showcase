@@ -1,5 +1,6 @@
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 interface InlineContactBannerProps {
   title?: string;
@@ -10,7 +11,10 @@ const InlineContactBanner = ({
   title = "Ready to see it in action?", 
   description = "Book a walkthrough and we'll map your first automation." 
 }: InlineContactBannerProps) => {
+  const { trackCTAClick } = useAnalytics();
+  
   const scrollToSection = (sectionId: string) => {
+    trackCTAClick('get_walkthrough', 'inline_banner');
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: "smooth" });
   };
