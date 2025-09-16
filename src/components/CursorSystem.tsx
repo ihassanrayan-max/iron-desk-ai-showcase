@@ -10,7 +10,11 @@ const CursorSystem = () => {
     <>
       <div ref={cursorRef} className="cursor" />
       <div ref={cursorTrailRef} className="cursor-trail" />
-      <div ref={cursorGlowRef} className="cursor-glow" />
+      <div ref={cursorGlowRef} className="cursor-glow">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <SymbolIcon size={28} className="text-primary brightness-200 drop-shadow-[0_0_14px_hsl(var(--primary))]" />
+        </div>
+      </div>
       <div className="page-background" />
       <div className="scroll-progress">
         <div className="scroll-progress-bar" />
