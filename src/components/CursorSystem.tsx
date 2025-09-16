@@ -12,7 +12,7 @@ const CursorSystem = () => {
       <div ref={cursorTrailRef} className="cursor-trail" />
       <div ref={cursorGlowRef} className="cursor-glow">
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <SymbolIcon size={28} className="text-primary brightness-200 drop-shadow-[0_0_14px_hsl(var(--primary))]" />
+          <SymbolIcon size={28} className="text-primary brightness-300 drop-shadow-[0_0_20px_hsl(var(--primary))]" />
         </div>
       </div>
       <div className="page-background" />
@@ -29,7 +29,7 @@ const CursorSystem = () => {
         animationDelay: '0s'
       }}>
         <div className="absolute inset-0 flex items-center justify-center">
-          <SymbolIcon size={120} className="text-primary brightness-150 drop-shadow-[0_0_20px_hsl(var(--primary))] animate-pulse" />
+          <SymbolIcon size={140} className="text-primary brightness-300 drop-shadow-[0_0_30px_hsl(var(--primary))] filter saturate-150" />
         </div>
       </div>
       <div className="floating-orb" style={{
