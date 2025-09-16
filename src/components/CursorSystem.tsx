@@ -24,8 +24,8 @@ const CursorSystem = () => {
         right: '5%',
         animationDelay: '0s'
       }}>
-        <div className="absolute inset-0 flex items-center justify-center opacity-20">
-          <SymbolIcon size={80} className="text-primary" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <SymbolIcon size={120} className="text-primary brightness-150 drop-shadow-[0_0_20px_hsl(var(--primary))] animate-pulse" />
         </div>
       </div>
       <div className="floating-orb" style={{
