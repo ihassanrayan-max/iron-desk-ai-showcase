@@ -2,8 +2,7 @@ import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { ArrowRight, Rocket, BarChart3, DollarSign, Settings } from "lucide-react";
 import { useScrollReveal } from '@/hooks/useScrollReveal';
-import accentPlatformImg from '@/assets/accent_platform.png';
-import platformMockImg from '@/assets/platform_mock.png';
+import conceptPlatform from '@/assets/concept_platform.webp';
 
 const PlatformSection = () => {
   const sectionRef = useScrollReveal();
@@ -40,7 +39,7 @@ const PlatformSection = () => {
     <section ref={sectionRef} id="platform" className="section-medium section-divider relative overflow-hidden">
       <div 
         className="section-accent opacity-5"
-        style={{ backgroundImage: `url(${accentPlatformImg})` }}
+        style={{ backgroundImage: `url(${conceptPlatform})` }}
       />
       
       <div className="page-width mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,9 +71,9 @@ const PlatformSection = () => {
           <div className="relative">
             <div className="premium-card rounded-2xl p-1">
               <img 
-                src={platformMockImg} 
-                alt="Platform dashboard showing automation workflows and analytics"
-                className="w-full rounded-xl hover-lift"
+                src={conceptPlatform} 
+                alt="Abstract workflow builder showing modular automation blocks and connecting arrows"
+                className="w-full rounded-xl hover-lift scroll-reveal"
               />
             </div>
           </div>

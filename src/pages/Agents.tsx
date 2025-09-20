@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import CursorSystem from '@/components/CursorSystem';
 import BackToTop from '@/components/BackToTop';
 import StickyWalkthrough from '@/components/StickyWalkthrough';
-import accentAgentsImg from '@/assets/accent_agents.png';
+import conceptAnalytics from '@/assets/concept_analytics.webp';
 
 const Agents = () => {
   const heroRef = useScrollReveal();
@@ -59,7 +59,7 @@ const Agents = () => {
         <section ref={heroRef} className="relative py-20 lg:py-24 overflow-hidden">
           <div 
             className="section-accent"
-            style={{ backgroundImage: `url(${accentAgentsImg})` }}
+            style={{ backgroundImage: `url(${conceptAnalytics})` }}
           />
           <div className="page-width mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">

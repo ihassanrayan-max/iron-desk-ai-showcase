@@ -1,6 +1,6 @@
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
-import heroMockup from "@/assets/hero-mockup.jpg";
+import conceptHero from "@/assets/concept_hero.webp";
 import SymbolIcon from "./SymbolIcon";
 
 const HeroSection = () => {
@@ -53,9 +53,9 @@ const HeroSection = () => {
             <div className="relative transform lg:scale-110">
               <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-primary/20 rounded-2xl blur-3xl" />
               <img 
-                src={heroMockup} 
-                alt="IronDeskAI platform interface showing automated workflow dashboard"
-                className="relative rounded-2xl shadow-2xl hover-lift"
+                src={conceptHero} 
+                alt="IronDeskAI automation workflows with central brain-circuit symbol and orbiting automation elements"
+                className="relative rounded-2xl shadow-2xl hover-lift scroll-reveal"
                 style={{ aspectRatio: '16/10' }}
                 loading="eager"
               />

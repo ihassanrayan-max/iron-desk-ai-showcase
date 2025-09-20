@@ -1,6 +1,7 @@
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { FileText, Map, CheckCircle, ArrowRight } from "lucide-react";
+import conceptLeads from '@/assets/concept_leads.webp';
 
 const ResourcesSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -30,7 +31,11 @@ const ResourcesSection = () => {
   ];
 
   return (
-    <section id="resources" className="py-16 section-divider">
+    <section id="resources" className="py-16 section-divider relative overflow-hidden">
+      <div 
+        className="section-accent opacity-5"
+        style={{ backgroundImage: `url(${conceptLeads})` }}
+      />
       <div className="page-width mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="font-bold mb-4">

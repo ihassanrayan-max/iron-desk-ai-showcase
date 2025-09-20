@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import CursorSystem from '@/components/CursorSystem';
 import BackToTop from '@/components/BackToTop';
 import StickyWalkthrough from '@/components/StickyWalkthrough';
-import accentResourcesImg from '@/assets/accent_resources.png';
+import conceptLeads from '@/assets/concept_leads.webp';
 
 const UseCases = () => {
   const heroRef = useScrollReveal();
@@ -52,7 +52,7 @@ const UseCases = () => {
         <section ref={heroRef} className="relative py-20 lg:py-24 overflow-hidden">
           <div 
             className="section-accent"
-            style={{ backgroundImage: `url(${accentResourcesImg})` }}
+            style={{ backgroundImage: `url(${conceptLeads})` }}
           />
           <div className="page-width mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
